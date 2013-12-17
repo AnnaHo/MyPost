@@ -1,6 +1,8 @@
 class PostsController <ApplicationController
-	before_action :login_required, :only => [:new, :create, :update, :destroy]
 	before_action :find_group
+	before_action :login_required, :only => [:new, :create, :update, :destroy]
+    before_action :member_required, :only=>[:new, :create]
+	
 	def new
 		@post = @group.posts.build
 	end
@@ -32,11 +34,18 @@ class PostsController <ApplicationController
 	end
 
 	private
-		def post_params
+	  def post_params
 		params.require(:post).permit(:content)
-		end
+	  end
 
-	def find_group
+	  def find_group
 		@group = Group.find(params[:group_id])
-	end	
+	  end
+
+	  def member_required
+	    if !current_user.is_member_of?(@group)
+	  	   flash[:warning] = "You are not member of the group"
+	  	   redirect_to group_path(@group)
+	    end
+	  end	
 end
