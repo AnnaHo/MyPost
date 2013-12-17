@@ -1,6 +1,11 @@
 <div class = "span12">
+	<div class = "Member_login">
+		<%= link_to( "Sign Up" ,new_user_registration_path, :class =>"btn btn-mini pull-right") %>
+		<%= link_to( "Login", new_user_session_path, :class => "btn btn-mini pull-right") %>
+		<%= link_to("Logout",destroy_user_session_path, :method => :delete, :class => "btn btn-mini pull-right" ) %>
+	</div>
 	<div class = "group">
-	  <%=link_to("New_group",new_group_path, :class =>"btn btn-primary")%> 		
+	  <%=link_to("New_group",new_group_path, :class =>"btn btn-primary")%> 	
 	</div>
 	<table class = "table">
 		<thead>
