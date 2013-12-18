@@ -43,12 +43,6 @@ class GroupsController <ApplicationController
 		redirect_to groups_path
 	end
 
-	private
-
-	def group_params
-		params.require(:group).permit(:title, :description)
-	end
-
 	def join
 		@group = Group.find(params[:id])
 		if !current_user.is_member_of?(@group)
@@ -69,5 +63,13 @@ class GroupsController <ApplicationController
 		end
 		redirect_to group_path(@group)
 	end
+
+	private
+
+	def group_params
+		params.require(:group).permit(:title, :description)
+	end
+
+	
 	
 end
