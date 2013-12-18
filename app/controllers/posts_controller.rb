@@ -10,6 +10,7 @@ class PostsController <ApplicationController
 		@post = @group.posts.new(post_params)
 		@post.author = current_user
 		if @post.save
+			Group.increment_counter(:posts_count, @group_id)
 			redirect_to group_path(@group)
 		else
 			render :new
@@ -30,6 +31,7 @@ class PostsController <ApplicationController
 	def destroy
 		@post = @current_user.posts.find(params[:id])
 		@post.destroy
+		Group.decrement_counter(:posts_count, @group_id)
 		redirect_to groups_path(@group)
 	end
 
