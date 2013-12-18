@@ -34,6 +34,8 @@ gem 'simple_form'
 gem 'devise'
 
 gem 'omniauth'
+gem "omniauth-github"
+ gem "omniauth-twitter"
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
