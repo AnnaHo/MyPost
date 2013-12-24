@@ -37,6 +37,8 @@ gem 'omniauth'
 gem "omniauth-github"
  gem "omniauth-twitter"
 
+gem "populator"
+gem "faker"
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
