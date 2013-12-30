@@ -34,11 +34,19 @@ gem 'simple_form'
 gem 'devise'
 
 gem 'omniauth'
+
 gem "omniauth-github"
- gem "omniauth-twitter"
+
+gem "omniauth-twitter"
 
 gem "populator"
+
 gem "faker"
+
+gem 'capistrano'
+
+gem 'capistrano-ext'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
@@ -48,7 +56,7 @@ end
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+ gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
