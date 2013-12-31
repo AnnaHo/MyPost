@@ -21,8 +21,8 @@ test:
 production:
   adapter: mysql2
   encoding: utf8
-  database: rails_101
-  host: localhost
+  database: rails101
+  host: rails101.crhj9uqwz3kf.us-west-2.rds.amazonaws.com
   pool: 5
   username: ubuntu
   password: annahoho
